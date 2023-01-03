@@ -27,10 +27,10 @@ figsize1 = (9, 4)
 figsize2 = (9, 5)
 
 ## specify the considered object to analyze
-simulate = False  # logical whether to used simulated or real data (-> knowledge about real U's)
-byExID_nb = 2  # 2 ***  # specify the byExID function to use (only used if simulate == True)
-idX = 205  # 202 ***  # specify graphon to consider (only used if simulate == True)
-data_ = 'alliances'  # specify data to consider (only used if simulate == False)
+simulate = False  # logical whether to used simulated or real data (-> knowledge about real U's)
+byExID_nb = 2  # 2 ***  # specify the byExID function to use (only used if simulate == True)
+idX = 205  # 202 ***  # specify graphon to consider (only used if simulate == True)
+data_ = 'brain'  # specify data to consider (only used if simulate == False)
 start_ = 1  # start value for global repetition of the algorithm
 stop_ = (2) + (start_ -1)  # stop value for global repetition of the algorithm, (.) = number of global repetitions
 
