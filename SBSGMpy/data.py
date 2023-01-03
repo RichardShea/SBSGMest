@@ -83,10 +83,15 @@ def GraphFromData(data_, estMethod = None, dir_ = os.path.realpath('..'), addLab
         Us_real = nx.get_node_attributes(G, 'UsReal')  # np.array(list(nx.get_node_attributes(G, 'UsReal').values()))
         node_labels = np.array(list(G.nodes))
     ##### Human Brain Data
-    if data_ == 'brain':
-        weightMat = scipy.io.loadmat(os.path.join(dir_, 'Data/human_brain') + '/Coactivation_matrix.mat')['Coactivation_matrix']
-        adjMat = (weightMat >= 1e-5).astype('int')
-        # an edge between two brain regions means that there is at least one task at which they are coactivated
+     if data_ == 'brain':
+        # weightMat = scipy.io.loadmat(os.path.join(dir_, 'Data/human_brain') + '/Coactivation_matrix.mat')['Coactivation_matrix']
+        # adjMat = (weightMat >= 1e-5).astype('int')
+        import numpy as np
+        n = 10
+        rand_adj = np.random.randint(0, 2, (n, n))
+        rand_adj ^= rand_adj.T
+        adjMat = rand_adj
+        # an edge between two brain regions means that there is at least one task at which they are coactivated
     ##### Santa Fe Collaboration Network
     if data_ == 'santa_fe':
         edge_list = np.zeros((0, 2)).astype('int')
